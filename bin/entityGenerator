@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+// find autoload.php
+foreach (array(__DIR__ . '/../../../autoload.php', __DIR__ . '/../../autoload.php', __DIR__ . '/../vendor/autoload.php', __DIR__ . '/vendor/autoload.php') as $path) {
+    if (file_exists($path)) {
+        require $path;
+        break;
+    }
+}
+
+if (count($argv) < 2) {
+    echo 'Using: entityGenerator [YAML file path]'.PHP_EOL;
+    exit(1);
+}
+$config = new \Subsan\EntityGenerator\GeneratorConfig();
+
+$generator = new \Subsan\EntityGenerator\Generator($config->getFromYAMLFile($argv[1]));
+
+echo $generator->getSource();

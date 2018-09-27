@@ -1,0 +1,15 @@
+name: GeneratorConfig
+namespace: Subsan\EntityGenerator
+fields:
+  Name:
+    type: string
+    description: Name of generating class
+  Namespace:
+    type: string
+    description: Namespace for class file
+  Extends:
+    type: string
+    description: Parent class
+  Fields:
+    type: array
+    description: EntityFields

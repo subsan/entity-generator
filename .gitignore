@@ -1,0 +1,9 @@
+#composer
+/vendor/
+/composer.phar
+/composer.lock
+
+#idea
+/.idea
+
+/private

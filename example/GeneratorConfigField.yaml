@@ -1,0 +1,12 @@
+name: GeneratorConfigField
+namespace: Subsan\EntityGenerator
+fields:
+  Name:
+    type: string
+    description: Name of field
+  Type:
+    type: string
+    description: Type of field
+  Description:
+    type: string
+    description: Description for field

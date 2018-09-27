@@ -1,0 +1,25 @@
+{
+  "name": "subsan/entity-generator",
+  "description": "PHP entity generator",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "subsan",
+      "email": "subsan@online.ua"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Subsan\\EntityGenerator\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.0",
+    "symfony/yaml": "^4.1",
+    "twig/twig": "^2.0"
+  },
+  "bin": [
+    "bin/entityGenerator"
+  ]
+}
