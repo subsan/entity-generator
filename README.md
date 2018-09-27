@@ -64,7 +64,7 @@ fields:
 
 run in console:
 ```sh
-/vendor/bin/entityGenerator /vendor/subsan/entity-generator/example/GeneratorConfigField.yaml > GeneratorConfigField.php
+vendor/bin/entityGenerator vendor/subsan/entity-generator/example/GeneratorConfigField.yaml > GeneratorConfigField.php
 ```
 
 Generate file GeneratorConfigField.php contains:
