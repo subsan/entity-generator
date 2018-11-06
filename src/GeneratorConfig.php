@@ -83,8 +83,8 @@ class GeneratorConfig
             $fieldClass = new GeneratorConfigField();
             $fieldClass->setName($fieldName)
                 ->setType($field['type'])
-                ->setDescription($field['description'] ?? '');
-
+                ->setDescription($field['description'] ?? '')
+                ->setSetNull(isset($field['setNull'])?$field['setNull']:false);
             $fields[] = $fieldClass;
         }
         $this->setName($fileArray['name'])

@@ -9,18 +9,18 @@ class {{ config.getName() }} {% if config.getExtends() %}extends {{ config.getEx
 {
 {% for property in config.getFields() %}
     /**
-     * @var {{ property.getType() }} {{ property.getDescription() }}
+     * @var {{ property.getType() }}{% if property.getSetNull() %}|null{% endif %} {{ property.getDescription() }}
      */
     private ${{ property.getName()|lcfirst }};
 
 {% endfor %}
 {% for property in config.getFields() %}
-    public function get{{ property.getName()|ucfirst }}(): {{ property.getType() }}
+    public function get{{ property.getName()|ucfirst }}(): {% if property.getSetNull() %}?{% endif %}{{ property.getType() }}
     {
         return $this->{{ property.getName()|lcfirst }};
     }
 
-    public function set{{ property.getName()|ucfirst }}(${{ property.getName()|lcfirst }}): self
+    public function set{{ property.getName()|ucfirst }}({% if property.getSetNull() %}?{% endif %}{{ property.getType() }} ${{ property.getName()|lcfirst }}): self
     {
         $this->{{ property.getName()|lcfirst }} = ${{ property.getName()|lcfirst }};
 

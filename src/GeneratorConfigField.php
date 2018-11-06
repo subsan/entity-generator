@@ -19,12 +19,17 @@ class GeneratorConfigField
      */
     private $description;
 
+    /**
+     * @var boolean Is null awailable
+     */
+    private $setNull;
+
     public function getName(): string
     {
         return $this->name;
     }
 
-    public function setName($name): self
+    public function setName(string $name): self
     {
         $this->name = $name;
 
@@ -36,7 +41,7 @@ class GeneratorConfigField
         return $this->type;
     }
 
-    public function setType($type): self
+    public function setType(string $type): self
     {
         $this->type = $type;
 
@@ -48,9 +53,21 @@ class GeneratorConfigField
         return $this->description;
     }
 
-    public function setDescription($description): self
+    public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getSetNull(): bool
+    {
+        return $this->setNull;
+    }
+
+    public function setSetNull(bool $setNull): self
+    {
+        $this->setNull = $setNull;
 
         return $this;
     }

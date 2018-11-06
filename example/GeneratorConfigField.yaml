@@ -10,3 +10,6 @@ fields:
   Description:
     type: string
     description: Description for field
+  SetNull:
+    type: bool
+    description: Is null awailable
