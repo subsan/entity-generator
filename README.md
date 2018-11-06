@@ -60,6 +60,7 @@ fields:
   Description:
     type: string
     description: Description for field
+    setNull: true
 ```
 
 run in console:
@@ -86,7 +87,7 @@ class GeneratorConfigField
     private $type;
 
     /**
-     * @var string Description for field
+     * @var string|null Description for field
      */
     private $description;
 
@@ -95,7 +96,7 @@ class GeneratorConfigField
         return $this->name;
     }
 
-    public function setName($name): self
+    public function setName(string $name): self
     {
         $this->name = $name;
 
@@ -107,19 +108,19 @@ class GeneratorConfigField
         return $this->type;
     }
 
-    public function setType($type): self
+    public function setType(string $type): self
     {
         $this->type = $type;
 
         return $this;
     }
 
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
 
-    public function setDescription($description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 
